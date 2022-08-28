@@ -20,6 +20,7 @@
 		406627C028BA6E4D005B630C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406627BF28BA6E4D005B630C /* Extensions.swift */; };
 		406627C328BA9B2A005B630C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406627C228BA9B2A005B630C /* LoginController.swift */; };
 		406627C528BA9BE8005B630C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406627C428BA9BE8005B630C /* RegistrationController.swift */; };
+		40A998EB28BB4A2600F169EB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A998EA28BB4A2600F169EB /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		406627BF28BA6E4D005B630C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		406627C228BA9B2A005B630C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		406627C428BA9BE8005B630C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		40A998EA28BB4A2600F169EB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				406627BF28BA6E4D005B630C /* Extensions.swift */,
+				40A998EA28BB4A2600F169EB /* Utilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				406627BC28BA60F6005B630C /* NotificationsController.swift in Sources */,
 				406627BE28BA6101005B630C /* ConversationsController.swift in Sources */,
+				40A998EB28BB4A2600F169EB /* Utilities.swift in Sources */,
 				4066279B28BA5B96005B630C /* AppDelegate.swift in Sources */,
 				406627C028BA6E4D005B630C /* Extensions.swift in Sources */,
 				406627C328BA9B2A005B630C /* LoginController.swift in Sources */,
