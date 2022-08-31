@@ -113,7 +113,7 @@ class RegistrationController: UIViewController {
     func configureUI () {
         view.backgroundColor = .twitterBlue
         
-        imagePicker.delegate = self
+        imagePicker.delegate      = self
         imagePicker.allowsEditing = true
         
         view.addSubview(plusPhotoButton)
@@ -126,13 +126,18 @@ class RegistrationController: UIViewController {
                                                   fullNameContainerView,
                                                   usernameContainerView,
                                                   registerButton])
-        stack.axis = .vertical
-        stack.spacing = 20
+        stack.axis         = .vertical
+        stack.spacing      = 20
         stack.distribution = .fillEqually
         
         view.addSubview(stack)
         
-        stack.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 32, paddingLeft: 32, paddingRight: 32)
+        stack.anchor(top: plusPhotoButton.bottomAnchor,
+                     left: view.leftAnchor,
+                     right: view.rightAnchor,
+                     paddingTop: 32,
+                     paddingLeft: 32,
+                     paddingRight: 32)
         
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.anchor(left: view.leftAnchor,
