@@ -10,6 +10,7 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseDatabase
+import FirebaseStorage
 
 class RegistrationController: UIViewController {
     // MARK: - Properties
