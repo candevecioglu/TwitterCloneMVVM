@@ -1,0 +1,6 @@
+framework module Pods_TwitterCloneMVVM {
+  umbrella header "Pods-TwitterCloneMVVM-umbrella.h"
+
+  export *
+  module * { export * }
+}
