@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseDatabase
 import FirebaseStorage
+import SafariServices
 
 class RegistrationController: UIViewController {
     // MARK: - Properties
