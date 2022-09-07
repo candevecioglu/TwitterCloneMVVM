@@ -22,6 +22,7 @@
 		406627C528BA9BE8005B630C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406627C428BA9BE8005B630C /* RegistrationController.swift */; };
 		40A998EB28BB4A2600F169EB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A998EA28BB4A2600F169EB /* Utilities.swift */; };
 		96938B31BF848DC28D70E437 /* Pods_TwitterCloneMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD0F09E8891767033CE335D /* Pods_TwitterCloneMVVM.framework */; };
+		DD18FF2028C92A0C000FB9B6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */; };
 		DD37D34C28C52BA200658686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD37D34B28C52BA200658686 /* GoogleService-Info.plist */; };
 		DD45786728C6701300BA9A81 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45786628C6701300BA9A81 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		40A998EA28BB4A2600F169EB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BDD0F09E8891767033CE335D /* Pods_TwitterCloneMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterCloneMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D61AEDD93F59EF7C63C619 /* Pods-TwitterCloneMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCloneMVVM.release.xcconfig"; path = "Target Support Files/Pods-TwitterCloneMVVM/Pods-TwitterCloneMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DD37D34B28C52BA200658686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD45786628C6701300BA9A81 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DF31B9317A77DE4E38D4BA98 /* Pods-TwitterCloneMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCloneMVVM.debug.xcconfig"; path = "Target Support Files/Pods-TwitterCloneMVVM/Pods-TwitterCloneMVVM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		406627B028BA5C20005B630C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				4066279B28BA5B96005B630C /* AppDelegate.swift in Sources */,
 				406627C028BA6E4D005B630C /* Extensions.swift in Sources */,
 				406627C328BA9B2A005B630C /* LoginController.swift in Sources */,
+				DD18FF2028C92A0C000FB9B6 /* AuthService.swift in Sources */,
 				406627BA28BA60C6005B630C /* ExploreController.swift in Sources */,
 				4066279D28BA5B96005B630C /* SceneDelegate.swift in Sources */,
 				406627B628BA5D4E005B630C /* MainTabController.swift in Sources */,
