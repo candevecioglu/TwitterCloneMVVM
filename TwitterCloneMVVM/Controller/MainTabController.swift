@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseDatabase
+import FirebaseStorage
 
 class MainTabController: UITabBarController {
     
@@ -24,9 +29,34 @@ class MainTabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUI()
-        configureViewControllers()
+        view.backgroundColor = .twitterBlue
+        authenticateUserAndConfigureUI()
+        //logUserOut()
 
+    }
+    
+    // MARK: - API
+    
+    func authenticateUserAndConfigureUI () {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let nav = UINavigationController(rootViewController: LoginController())
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+        } else {
+            configureUI()
+            configureViewControllers()
+        }
+    }
+    
+    func logUserOut() {
+        do {
+            try Auth.auth().signOut()
+            print("DEBUG: Did log user out!")
+        } catch {
+            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+        }
     }
     
     // MARK: - Selectors

@@ -120,8 +120,6 @@ class RegistrationController: UIViewController {
         
         let credentials = AuthCredentials(email: email, password: password, fullname: fullName, username: userName, profileImage: profileImage)
         
-
-        
         AuthService.shared.registerUser(credentials: credentials) { error, ref in
             print("Registeration is completed :)")
             print("Update user interface here!")

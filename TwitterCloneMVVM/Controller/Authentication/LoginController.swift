@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseDatabase
+import FirebaseStorage
 
 class LoginController: UIViewController {
     // MARK: - Properties
@@ -72,7 +77,18 @@ class LoginController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleLogin () {
-        print("test")
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        AuthService.shared.logUserIn(withEmail: email, password: password) { result, error in
+            
+            if let error = error {
+                print("DEBUG: Error logging in \(error.localizedDescription)")
+                return
+            }
+            
+            print("DEBUG: OLDU MU?")
+        }
     }
     
     @objc func handleShowSignUp () {
