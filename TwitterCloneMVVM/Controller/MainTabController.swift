@@ -62,7 +62,14 @@ class MainTabController: UITabBarController {
     // MARK: - Selectors
     
     @objc func actionButtonTapped () {
-        print("123")
+        // Burayı ben ekledim
+        do {
+            try Auth.auth().signOut()
+            print("DEBUG: Did log user out!")
+            self.dismiss(animated: true, completion: nil)
+        } catch {
+            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
+        }
     }
     
     // MARK: - Helpers
