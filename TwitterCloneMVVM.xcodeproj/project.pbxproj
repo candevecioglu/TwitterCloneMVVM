@@ -25,6 +25,7 @@
 		DD18FF2028C92A0C000FB9B6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */; };
 		DD37D34C28C52BA200658686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD37D34B28C52BA200658686 /* GoogleService-Info.plist */; };
 		DD45786728C6701300BA9A81 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45786628C6701300BA9A81 /* Constants.swift */; };
+		DDB82E8A28CBAD7D00DE4A4A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E8928CBAD7D00DE4A4A /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DD37D34B28C52BA200658686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD45786628C6701300BA9A81 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DDB82E8928CBAD7D00DE4A4A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DF31B9317A77DE4E38D4BA98 /* Pods-TwitterCloneMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCloneMVVM.debug.xcconfig"; path = "Target Support Files/Pods-TwitterCloneMVVM/Pods-TwitterCloneMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */,
+				DDB82E8928CBAD7D00DE4A4A /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB82E8A28CBAD7D00DE4A4A /* UserService.swift in Sources */,
 				406627BC28BA60F6005B630C /* NotificationsController.swift in Sources */,
 				406627BE28BA6101005B630C /* ConversationsController.swift in Sources */,
 				40A998EB28BB4A2600F169EB /* Utilities.swift in Sources */,
