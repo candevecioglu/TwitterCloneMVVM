@@ -26,6 +26,7 @@
 		DD37D34C28C52BA200658686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD37D34B28C52BA200658686 /* GoogleService-Info.plist */; };
 		DD45786728C6701300BA9A81 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45786628C6701300BA9A81 /* Constants.swift */; };
 		DDB82E8A28CBAD7D00DE4A4A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E8928CBAD7D00DE4A4A /* UserService.swift */; };
+		DDB82E8C28CC831A00DE4A4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E8B28CC831A00DE4A4A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		DD37D34B28C52BA200658686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD45786628C6701300BA9A81 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DDB82E8928CBAD7D00DE4A4A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		DDB82E8B28CC831A00DE4A4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF31B9317A77DE4E38D4BA98 /* Pods-TwitterCloneMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCloneMVVM.debug.xcconfig"; path = "Target Support Files/Pods-TwitterCloneMVVM/Pods-TwitterCloneMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 		406627B428BA5C2F005B630C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DDB82E8B28CC831A00DE4A4A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				406627C028BA6E4D005B630C /* Extensions.swift in Sources */,
 				406627C328BA9B2A005B630C /* LoginController.swift in Sources */,
 				DD18FF2028C92A0C000FB9B6 /* AuthService.swift in Sources */,
+				DDB82E8C28CC831A00DE4A4A /* User.swift in Sources */,
 				406627BA28BA60C6005B630C /* ExploreController.swift in Sources */,
 				4066279D28BA5B96005B630C /* SceneDelegate.swift in Sources */,
 				406627B628BA5D4E005B630C /* MainTabController.swift in Sources */,

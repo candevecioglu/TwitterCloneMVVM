@@ -10,5 +10,6 @@ target 'TwitterCloneMVVM' do
 	pod 'FirebaseFirestore'
 	pod 'FirebaseStorage'
 	pod 'FirebaseDatabase'
+  pod 'SDWebImage', '~> 5.0'
 
 end
