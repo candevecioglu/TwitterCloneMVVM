@@ -81,14 +81,15 @@ class MainTabController: UITabBarController {
     // MARK: - Selectors
     
     @objc func actionButtonTapped () {
-        // Burayı ben ekledim
-        do {
-            try Auth.auth().signOut()
-            print("DEBUG: Did log user out!")
-            self.dismiss(animated: true, completion: nil)
-        } catch {
-            print("DEBUG: Failed to sign out with error \(error.localizedDescription)")
-        }
+        
+        guard let user = user else { return }
+        
+        let controller = UploadTweetController(user: user)
+        
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
+
     }
     
     // MARK: - Helpers
