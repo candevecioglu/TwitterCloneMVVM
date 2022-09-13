@@ -31,6 +31,7 @@
 		DDB82E9028CDE3DA00DE4A4A /* CaptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E8F28CDE3DA00DE4A4A /* CaptionTextView.swift */; };
 		DDB82E9228CF99FF00DE4A4A /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E9128CF99FF00DE4A4A /* TweetService.swift */; };
 		DDB82E9428CF9F3D00DE4A4A /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E9328CF9F3D00DE4A4A /* Tweet.swift */; };
+		DDB82E9628D1110600DE4A4A /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E9528D1110600DE4A4A /* TweetCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		DDB82E8F28CDE3DA00DE4A4A /* CaptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionTextView.swift; sourceTree = "<group>"; };
 		DDB82E9128CF99FF00DE4A4A /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
 		DDB82E9328CF9F3D00DE4A4A /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		DDB82E9528D1110600DE4A4A /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		DF31B9317A77DE4E38D4BA98 /* Pods-TwitterCloneMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCloneMVVM.debug.xcconfig"; path = "Target Support Files/Pods-TwitterCloneMVVM/Pods-TwitterCloneMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				DDB82E8F28CDE3DA00DE4A4A /* CaptionTextView.swift */,
+				DDB82E9528D1110600DE4A4A /* TweetCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				40A998EB28BB4A2600F169EB /* Utilities.swift in Sources */,
 				4066279B28BA5B96005B630C /* AppDelegate.swift in Sources */,
 				406627C028BA6E4D005B630C /* Extensions.swift in Sources */,
+				DDB82E9628D1110600DE4A4A /* TweetCell.swift in Sources */,
 				406627C328BA9B2A005B630C /* LoginController.swift in Sources */,
 				DD18FF2028C92A0C000FB9B6 /* AuthService.swift in Sources */,
 				DDB82E8E28CCE56B00DE4A4A /* UploadTweetController.swift in Sources */,
