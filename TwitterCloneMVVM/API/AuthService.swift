@@ -13,11 +13,13 @@ import FirebaseDatabase
 import FirebaseStorage
 
 struct AuthCredentials {
-    let email: String
-    let password: String
-    let fullname: String
-    let username: String
+    
+    let email       : String
+    let password    : String
+    let fullname    : String
+    let username    : String
     let profileImage: UIImage
+
 }
 
 struct AuthService {
@@ -32,7 +34,7 @@ struct AuthService {
     
     func registerUser (credentials: AuthCredentials, completion: @escaping(Error?, DatabaseReference) -> Void) {
         
-        let email = credentials.email
+        let email    = credentials.email
         let password = credentials.password
         let userName = credentials.username
         let fullName = credentials.fullname
