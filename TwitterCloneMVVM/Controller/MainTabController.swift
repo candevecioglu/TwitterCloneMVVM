@@ -17,6 +17,7 @@ class MainTabController: UITabBarController {
     // MARK: - Properties
     
     var user: User? {
+        
         didSet {
             guard let nav = viewControllers?[0] as? UINavigationController else { return }
             guard let feed = nav.viewControllers.first as? FeedController else { return }
@@ -49,7 +50,9 @@ class MainTabController: UITabBarController {
     
     func fetchUser () {
         
-        UserService.shared.fetchUser { user in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        UserService.shared.fetchUser(uid: uid) { user in
             self.user = user
         }
         

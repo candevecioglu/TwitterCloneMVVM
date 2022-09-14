@@ -11,6 +11,7 @@ import SDWebImage
 private let reuseIdentifier = "TweetCell"
 
 class FeedController: UICollectionViewController {
+    
     // MARK: - Properties
     
     var user: User? {
@@ -82,6 +83,11 @@ extension FeedController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TweetCell
+        
+        print("DEBUG: Index path is \(indexPath.row)")
+        
+        cell.tweet = tweets[indexPath.row]
+        
         return cell
     }
     
