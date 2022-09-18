@@ -26,6 +26,7 @@
 		DD37D34C28C52BA200658686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD37D34B28C52BA200658686 /* GoogleService-Info.plist */; };
 		DD45786728C6701300BA9A81 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45786628C6701300BA9A81 /* Constants.swift */; };
 		DD60243C28D25D63007E1AE6 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD60243B28D25D63007E1AE6 /* TweetViewModel.swift */; };
+		DD9D6FF228D79B5100F7DDF1 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9D6FF128D79B5100F7DDF1 /* ProfileHeader.swift */; };
 		DDAA6A3228D64E790030D76D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAA6A3128D64E790030D76D /* ProfileController.swift */; };
 		DDB82E8A28CBAD7D00DE4A4A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E8928CBAD7D00DE4A4A /* UserService.swift */; };
 		DDB82E8C28CC831A00DE4A4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB82E8B28CC831A00DE4A4A /* User.swift */; };
@@ -59,6 +60,7 @@
 		DD37D34B28C52BA200658686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD45786628C6701300BA9A81 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DD60243B28D25D63007E1AE6 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
+		DD9D6FF128D79B5100F7DDF1 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		DDAA6A3128D64E790030D76D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		DDB82E8928CBAD7D00DE4A4A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DDB82E8B28CC831A00DE4A4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				DDB82E8F28CDE3DA00DE4A4A /* CaptionTextView.swift */,
 				DDB82E9528D1110600DE4A4A /* TweetCell.swift */,
+				DD9D6FF128D79B5100F7DDF1 /* ProfileHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				4066279B28BA5B96005B630C /* AppDelegate.swift in Sources */,
 				406627C028BA6E4D005B630C /* Extensions.swift in Sources */,
 				DDAA6A3228D64E790030D76D /* ProfileController.swift in Sources */,
+				DD9D6FF228D79B5100F7DDF1 /* ProfileHeader.swift in Sources */,
 				DDB82E9628D1110600DE4A4A /* TweetCell.swift in Sources */,
 				406627C328BA9B2A005B630C /* LoginController.swift in Sources */,
 				DD18FF2028C92A0C000FB9B6 /* AuthService.swift in Sources */,
