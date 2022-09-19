@@ -58,7 +58,6 @@ class ProfileHeader : UICollectionReusableView {
     private lazy var editProfileFollowButton: UIButton = {
     
         let button = UIButton(type: .system)
-        button.setTitle("Loading", for: .normal)
         button.layer.borderColor = UIColor.twitterBlue.cgColor
         button.layer.borderWidth = 1.25
         button.setTitleColor(.twitterBlue, for: .normal)
@@ -72,7 +71,6 @@ class ProfileHeader : UICollectionReusableView {
         
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.text = "Eddie Brock"
         return label
         
     }()
@@ -82,7 +80,6 @@ class ProfileHeader : UICollectionReusableView {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textColor = .lightGray
-        label.text = "@venom"
         return label
         
     }()
@@ -208,6 +205,9 @@ class ProfileHeader : UICollectionReusableView {
         
         followingLabel.attributedText = viewModel.followingString
         followersLabel.attributedText = viewModel.followersString
+        
+        fullNameLabel.text = user.fullname
+        userNameLabel.text = viewModel.usernameText
         
     }
     
