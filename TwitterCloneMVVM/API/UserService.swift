@@ -11,6 +11,8 @@ import FirebaseFirestore
 import FirebaseDatabase
 import FirebaseStorage
 
+typealias DatabaseCompletion = ((Error?, DatabaseReference) -> Void)
+
 struct UserService {
     static let shared = UserService()
     
@@ -41,12 +43,30 @@ struct UserService {
         
     }
     
-    func followUser (uid: String, completion: @escaping(Error?, DatabaseReference) -> Void) {
+    func followUser (uid: String, completion: @escaping(DatabaseCompletion)) {
         
         guard let currentUID = Auth.auth().currentUser?.uid else { return }
         
         REF_USER_FOLLOWING.child(currentUID).updateChildValues([uid : 1]) { err, ref in
             REF_USER_FOLLOWERS.child(uid).updateChildValues([currentUID : 1], withCompletionBlock: completion)
+        }
+    }
+    
+    func unfollowUser (uid: String, completion: @escaping(DatabaseCompletion)) {
+        
+        guard let currentUID = Auth.auth().currentUser?.uid else { return }
+        
+        REF_USER_FOLLOWING.child(currentUID).child(uid).removeValue { err, ref in
+            REF_USER_FOLLOWERS.child(uid).child(currentUID).removeValue(completionBlock: completion)
+        }
+    }
+    
+    func checkUserIfFollowed (uid: String, completion: @escaping(Bool) -> Void) {
+        
+        guard let currentUID = Auth.auth().currentUser?.uid else { return }
+        REF_USER_FOLLOWING.child(currentUID).child(uid).observeSingleEvent(of: .value) { snapshot in
+            completion(snapshot.exists())
+            print("DEBUG: User is followed \(snapshot.exists())")
         }
         
     }

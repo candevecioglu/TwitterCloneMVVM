@@ -56,7 +56,7 @@ class ProfileHeader : UICollectionReusableView {
         return iv
     }()
     
-    private lazy var editProfileFollowButton: UIButton = {
+    lazy var editProfileFollowButton: UIButton = {
     
         let button = UIButton(type: .system)
         button.layer.borderColor = UIColor.twitterBlue.cgColor
