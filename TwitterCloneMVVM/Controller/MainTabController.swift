@@ -98,6 +98,7 @@ class MainTabController: UITabBarController {
     // MARK: - Helpers
     
     func configureUI () {
+
         view.addSubview(actionButton)
         actionButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor,
                             right: view.rightAnchor,
@@ -106,6 +107,7 @@ class MainTabController: UITabBarController {
                             width: 56,
                             height: 56)
         actionButton.layer.cornerRadius = 56 / 2
+
         
     }
     
