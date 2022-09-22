@@ -45,6 +45,7 @@ class FeedController: UICollectionViewController {
             
             self.tweets = tweets
         }
+        
     }
     
     // MARK: - Helpers
@@ -59,6 +60,7 @@ class FeedController: UICollectionViewController {
         
         collectionView.register(TweetCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.backgroundColor = .white
+        
         
     }
     
@@ -99,6 +101,8 @@ extension FeedController {
         let controller = TweetController(tweet: tweets[indexPath.row])
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    
     
 }
 

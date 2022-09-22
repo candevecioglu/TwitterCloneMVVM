@@ -76,12 +76,6 @@ class UploadTweetController: UIViewController {
         
         configureUI()
         
-        switch config {
-        case .tweet:
-            print("DEBUG: Config is tweet")
-        case .reply(let tweet):
-            print("DEBUG: Replying to \(tweet.caption)")
-        }
         
     }
     
@@ -91,7 +85,7 @@ class UploadTweetController: UIViewController {
         
         guard let caption = captionTextView.text else { return }
         
-        TweetService.shared.uploadTweet(caption: caption) { error, ref in
+        TweetService.shared.uploadTweet(caption: caption, type: config) { error, ref in
             if let error = error {
                 print("DEBUG: Failed to upload tweet because \(error.localizedDescription)")
                 return
@@ -114,7 +108,6 @@ class UploadTweetController: UIViewController {
         
         view.backgroundColor = .white
         configureNavigationbar()
-        
         
         profileImageView.sd_setImage(with: user.profileImageURL, completed: nil)
         

@@ -14,7 +14,9 @@ class ProfileController: UICollectionViewController {
     
     //MARK: - Properties
     
-    private var user: User
+    
+    
+    var user: User
     
     private var tweets = [Tweet]() {
         didSet { collectionView.reloadData() }
