@@ -7,6 +7,8 @@
 
 import UIKit
 
+// OO
+
 class CaptionTextView: UITextView {
     
     // MARK: - Properties
