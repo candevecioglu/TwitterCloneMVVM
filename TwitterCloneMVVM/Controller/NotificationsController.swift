@@ -7,8 +7,10 @@
 
 import UIKit
 
-class NotificationsController: UIViewController {
+class NotificationsController: UITableViewController {
     // MARK: - Properties
+    
+    private var notifications = [Notification]()
     
     
     // MARK: - Lifecycle
@@ -26,6 +28,21 @@ class NotificationsController: UIViewController {
         
         view.backgroundColor = .white
         navigationItem.title = "Notifications"
+    }
+    
+}
+
+
+//MARK: - Extension
+
+extension NotificationsController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
     
 }

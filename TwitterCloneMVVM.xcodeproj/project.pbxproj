@@ -26,6 +26,8 @@
 		DD10164528DDAA140037F402 /* ActionSheetLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10164428DDAA140037F402 /* ActionSheetLauncher.swift */; };
 		DD10164728DDB3A00037F402 /* ActionSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10164628DDB3A00037F402 /* ActionSheetCell.swift */; };
 		DD10164928DDD23C0037F402 /* ActionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10164828DDD23C0037F402 /* ActionSheetViewModel.swift */; };
+		DD10164B28DE15D00037F402 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10164A28DE15D00037F402 /* Notification.swift */; };
+		DD10164D28DE18290037F402 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10164C28DE18290037F402 /* NotificationService.swift */; };
 		DD18FF2028C92A0C000FB9B6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */; };
 		DD37D34C28C52BA200658686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD37D34B28C52BA200658686 /* GoogleService-Info.plist */; };
 		DD45786728C6701300BA9A81 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45786628C6701300BA9A81 /* Constants.swift */; };
@@ -70,6 +72,8 @@
 		DD10164428DDAA140037F402 /* ActionSheetLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetLauncher.swift; sourceTree = "<group>"; };
 		DD10164628DDB3A00037F402 /* ActionSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCell.swift; sourceTree = "<group>"; };
 		DD10164828DDD23C0037F402 /* ActionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewModel.swift; sourceTree = "<group>"; };
+		DD10164A28DE15D00037F402 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		DD10164C28DE18290037F402 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DD37D34B28C52BA200658686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD45786628C6701300BA9A81 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				DD18FF1F28C92A0C000FB9B6 /* AuthService.swift */,
 				DDB82E8928CBAD7D00DE4A4A /* UserService.swift */,
 				DDB82E9128CF99FF00DE4A4A /* TweetService.swift */,
+				DD10164C28DE18290037F402 /* NotificationService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			children = (
 				DDB82E8B28CC831A00DE4A4A /* User.swift */,
 				DDB82E9328CF9F3D00DE4A4A /* Tweet.swift */,
+				DD10164A28DE15D00037F402 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,12 +378,14 @@
 				DD9D6FF228D79B5100F7DDF1 /* ProfileHeader.swift in Sources */,
 				DDB82E9628D1110600DE4A4A /* TweetCell.swift in Sources */,
 				406627C328BA9B2A005B630C /* LoginController.swift in Sources */,
+				DD10164B28DE15D00037F402 /* Notification.swift in Sources */,
 				DD18FF2028C92A0C000FB9B6 /* AuthService.swift in Sources */,
 				DD9D6FF828D866B200F7DDF1 /* ProfileHeaderViewModel.swift in Sources */,
 				DDB82E8E28CCE56B00DE4A4A /* UploadTweetController.swift in Sources */,
 				DDB82E8C28CC831A00DE4A4A /* User.swift in Sources */,
 				406627BA28BA60C6005B630C /* ExploreController.swift in Sources */,
 				4066279D28BA5B96005B630C /* SceneDelegate.swift in Sources */,
+				DD10164D28DE18290037F402 /* NotificationService.swift in Sources */,
 				406627B628BA5D4E005B630C /* MainTabController.swift in Sources */,
 				DD7CF66C28DA445D0083FD23 /* TweetHeader.swift in Sources */,
 				DD60243C28D25D63007E1AE6 /* TweetViewModel.swift in Sources */,

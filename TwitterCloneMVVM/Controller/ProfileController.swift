@@ -132,7 +132,6 @@ extension ProfileController: ProfileHeaderDelegate {
     func handleEditProfileFollow(_ header: ProfileHeader) {
         
         if user.isCurrentUser {
-            print("DEBUG: Show edit profile controller")
             return
         }
         
@@ -146,6 +145,8 @@ extension ProfileController: ProfileHeaderDelegate {
             UserService.shared.followUser(uid: user.uid) { ref, err in
                 self.user.isFollowed = true
                 self.collectionView.reloadData()
+                
+                NotificationService.shared.uploadNotification(type: .follow, user: self.user)
                 
             }
         }
