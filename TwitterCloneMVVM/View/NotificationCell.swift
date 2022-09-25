@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol NotificationCellDelegate: AnyObject {
+    
+    func didTapProfileImage (_ cell: NotificationCell)
+    func didTapFollow (_ cell: NotificationCell)
+    
+}
+
+
 class NotificationCell: UITableViewCell {
     
     //MARK: - Properties
@@ -14,6 +22,8 @@ class NotificationCell: UITableViewCell {
     var notification: Notification? {
         didSet { configure() }
     }
+    
+    weak var delegate: NotificationCellDelegate?
     
     private lazy var profileImageView: UIImageView = {
        let iv = UIImageView()
@@ -39,6 +49,17 @@ class NotificationCell: UITableViewCell {
         return label
     }()
     
+    private lazy var followButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Loading", for: .normal)
+        button.setTitleColor(.twitterBlue, for: .normal)
+        button.backgroundColor = .white
+        button.layer.borderColor = UIColor.twitterBlue.cgColor
+        button.layer.borderWidth = 2
+        button.addTarget(self, action: #selector(handleFollowersTapped), for: .touchUpInside)
+        return button
+    }()
+    
     //MARK: Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -55,6 +76,12 @@ class NotificationCell: UITableViewCell {
         stack.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 12)
         stack.anchor(right: rightAnchor, paddingRight: 12)
         
+        addSubview(followButton)
+        followButton.centerY(inView: self)
+        followButton.setDimensions(width: 92, height: 32)
+        followButton.layer.cornerRadius = 32 / 2
+        followButton.anchor(right: rightAnchor, paddingRight: 12)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -64,7 +91,11 @@ class NotificationCell: UITableViewCell {
     //MARK: Selectors
     
     @objc func handleProfileImageTapped () {
-        print("DEBUG: Row tapped")
+        delegate?.didTapProfileImage(self)
+    }
+    
+    @objc func handleFollowersTapped () {
+        delegate?.didTapFollow(self)
     }
     
     //MARK: - Helpers
@@ -76,6 +107,9 @@ class NotificationCell: UITableViewCell {
         
         profileImageView.sd_setImage(with: viewModel.profileImageURL)
         notificationLabel.attributedText = viewModel.notificationText
+        
+        followButton.isHidden = viewModel.shouldHideFollowButton
+        followButton.setTitle(viewModel.followButtonText, for: .normal)
         
     }
     

@@ -33,21 +33,32 @@ struct NotificationViewModel {
         }
     }
     
+    
     var notificationText: NSAttributedString? {
         
         guard let timeStamp = timeStampString else { return nil }
         let attributedText = NSMutableAttributedString(string: user.username,
                                                        attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 12)])
         
-        attributedText.append(NSAttributedString(string: notificationMessage, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]))
+        attributedText.append(NSAttributedString(string: notificationMessage,
+                                                 attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]))
         
-        attributedText.append(NSAttributedString(string: " \(timeStamp)", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
+        attributedText.append(NSAttributedString(string: " \(timeStamp)",
+                                                 attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
         
         return attributedText
     }
     
     var profileImageURL: URL? {
         return user.profileImageURL
+    }
+    
+    var shouldHideFollowButton: Bool {
+        return type != .follow
+    }
+    
+    var followButtonText: String {
+        return user.isFollowed ? "Following" : "Follow"
     }
     
     init(notification: Notification) {

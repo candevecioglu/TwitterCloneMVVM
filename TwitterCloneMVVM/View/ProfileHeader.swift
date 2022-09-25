@@ -11,6 +11,7 @@ protocol ProfileHeaderDelegate: AnyObject {
     
     func handleDissmiss ()
     func handleEditProfileFollow (_ header: ProfileHeader)
+    func didSelect(filter: ProfileFilterOptions)
     
 }
 
@@ -95,13 +96,7 @@ class ProfileHeader : UICollectionReusableView {
         
     }()
     
-    private let underLineView: UIView = {
-       
-        let view = UIView()
-        view.backgroundColor = .twitterBlue
-        return view
-        
-    }()
+
     
     private let followingLabel: UILabel = {
         
@@ -164,9 +159,6 @@ class ProfileHeader : UICollectionReusableView {
         
         let count = CGFloat(ProfileFilterOptions.allCases.count)
         
-        addSubview(underLineView)
-        underLineView.anchor(left: leftAnchor, bottom: bottomAnchor, width: frame.width / count, height: 2)
-        
         
     }
     
@@ -218,13 +210,12 @@ class ProfileHeader : UICollectionReusableView {
 //MARK: - ProfileFilterViewDelegate
 
 extension ProfileHeader: ProfileFilterViewDelegate {
-    
-    func filterView(_ view: ProfileFilterView, didSelect indexPath: IndexPath) {
-        guard let cell = view.collectionView.cellForItem(at: indexPath) as? ProfileFilterCell else { return }
-        let xPosition = cell.frame.origin.x
-        UIView.animate(withDuration: 0.3) {
-            self.underLineView.frame.origin.x = xPosition
-        }
+    func filterView(_ view: ProfileFilterView, didSelect index: Int) {
+        guard let filter = ProfileFilterOptions(rawValue: index) else { return }
+        
+        print("DEBUG: Delegate action from header to controller with filter \(filter.description) (ProfileHeader)")
+        
+        delegate?.didSelect(filter: filter)
     }
     
 }
