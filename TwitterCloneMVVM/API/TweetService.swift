@@ -51,22 +51,48 @@ struct TweetService {
         
         var tweets = [Tweet]()
         
-        REF_TWEETS.observe(.childAdded) { snapshot in
-            
-            guard let dictionary = snapshot.value as? [String : Any] else { return }
-            guard let uid = dictionary["uid"] as? String else { return }
-            let tweetID = snapshot.key
-            
-            UserService.shared.fetchUser(uid: uid) { user in
-                let tweet = Tweet(user: user, tweetID: tweetID, dictionary: dictionary)
-                tweets.append(tweet)
-                completion(tweets)
-            }
-
-            
-        }
+        guard let currentUID = Auth.auth().currentUser?.uid else { return }
         
+        REF_USER_FOLLOWING.child(currentUID).observe(.childAdded) { snapshot in
+            let followingUID = snapshot.key
+            
+            REF_USER_TWEETS.child(followingUID).observe(.childAdded) { snapshot in
+                let tweetID = snapshot.key
+                
+                self.fetchTweet(withTweetID: tweetID) { tweet in
+                    tweets.append(tweet)
+                    completion(tweets)
+                }
+            }
+        }
+            
+            REF_USER_TWEETS.child(currentUID).observe(.childAdded) { snapshot in
+                let tweetID = snapshot.key
+                
+                self.fetchTweet(withTweetID: tweetID) { tweet in
+                    tweets.append(tweet)
+                    completion(tweets)
+                
+            }
+        }
     }
+        
+//        REF_TWEETS.observe(.childAdded) { snapshot in
+//
+//            guard let dictionary = snapshot.value as? [String : Any] else { return }
+//            guard let uid = dictionary["uid"] as? String else { return }
+//            let tweetID = snapshot.key
+//
+//            UserService.shared.fetchUser(uid: uid) { user in
+//                let tweet = Tweet(user: user, tweetID: tweetID, dictionary: dictionary)
+//                tweets.append(tweet)
+//                completion(tweets)
+//            }
+//
+//
+//        }
+        
+    
     
     func fetchTweets (forUser user: User, completion: @escaping([Tweet]) -> Void) {
         var tweets = [Tweet]()

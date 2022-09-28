@@ -38,26 +38,42 @@ class FeedController: UICollectionViewController {
         navigationController?.navigationBar.barStyle = .default
     }
     
+    // MARK: - Selector
+    
+    @objc func handleRefresh () {
+        
+        fetchTweets()
+        
+    }
+    
     // MARK: - API
     
     func fetchTweets() {
+        
+        collectionView.refreshControl?.beginRefreshing()
+        
         TweetService.shared.fetchTweets { tweets in
+            self.tweets = tweets.sorted(by: { $0.timeStamp > $1.timeStamp })
+            self.checkIfUserLikedTweets()
             
-            self.tweets = tweets
-            self.checkIfUserLikedTweets(tweets)
-
+//            self.tweets = tweets.sorted(by: { tweet1, tweet2 -> Bool in
+//                return tweet1.timeStamp > tweet2.timeStamp
+//            })
+// $0 ve $1 aynı işlevi görüyor.
             
+            self.collectionView.refreshControl?.endRefreshing()
         }
         
     }
     
-    func checkIfUserLikedTweets(_ tweets: [Tweet]) {
-        
-        for (index, tweet) in tweets.enumerated() {
+    func checkIfUserLikedTweets () {
+        self.tweets.forEach { tweet in
             TweetService.shared.checkIfUserLikedTweet(tweet) { didLike in
                 guard didLike == true else { return }
                 
-                self.tweets[index].didLike = true
+                if let index = self.tweets.firstIndex(where: { $0.tweetID == tweet.tweetID }) {
+                    self.tweets[index].didLike = true
+                }
             }
         }
     }
@@ -74,6 +90,10 @@ class FeedController: UICollectionViewController {
         
         collectionView.register(TweetCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.backgroundColor = .white
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
         
         
     }
