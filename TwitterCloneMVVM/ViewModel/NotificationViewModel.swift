@@ -10,8 +10,8 @@ import UIKit
 struct NotificationViewModel {
     
     private let notification : Notification
-    private let type : NotificationType
-    private let user : User
+    private let type         : NotificationType
+    private let user         : User
     
     var timeStampString: String? {
         let formatter = DateComponentsFormatter()

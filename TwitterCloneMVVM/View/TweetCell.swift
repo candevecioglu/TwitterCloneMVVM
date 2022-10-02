@@ -19,21 +19,19 @@ class TweetCell: UICollectionViewCell {
     // MARK: - Properties
     
     var tweet: Tweet? {
-        
         didSet { configure() }
-        
     }
     
     weak var delegate: TweetCellDelegate?
     
     
     private lazy var profileImageView: UIImageView = {
-       let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.clipsToBounds = true
+       let iv                 = UIImageView()
+        iv.contentMode        = .scaleAspectFit
+        iv.clipsToBounds      = true
         iv.setDimensions(width: 48, height: 48)
         iv.layer.cornerRadius = 48 / 2
-        iv.backgroundColor = .twitterBlue
+        iv.backgroundColor    = .twitterBlue
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
         
@@ -102,7 +100,6 @@ class TweetCell: UICollectionViewCell {
         super.init(frame: frame)
         
         backgroundColor = .white
-        
         
         let captionStack = UIStackView(arrangedSubviews: [infoLabel, captionLabel])
         captionStack.axis = .vertical

@@ -15,13 +15,13 @@ import FirebaseStorage
 
 struct User {
     
-    let fullname: String
-    let email: String
-    let username: String
+    let fullname       : String
+    let email          : String
+    let username       : String
     var profileImageURL: URL?
-    let uid: String
-    var isFollowed = false
-    var stats: UserRelationStats?
+    let uid            : String
+    var isFollowed     = false
+    var stats          : UserRelationStats?
     
     var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == uid }
     

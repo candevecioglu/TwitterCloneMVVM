@@ -12,10 +12,10 @@ class CaptionTextView: UITextView {
     // MARK: - Properties
     
     let placeholderLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        let label       = UILabel()
+        label.font      = UIFont.systemFont(ofSize: 16)
         label.textColor = .darkGray
-        label.text = "What's happening?"
+        label.text      = "What's happening?"
         return label
     }()
     
@@ -43,9 +43,7 @@ class CaptionTextView: UITextView {
     // MARK: - Selectors
     
     @objc func handleTextInputChange () {
-        
         placeholderLabel.isHidden = !text.isEmpty
-        
     }
     
 }

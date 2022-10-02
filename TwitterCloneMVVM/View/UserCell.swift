@@ -9,11 +9,8 @@ import UIKit
 
 class UserCell: UITableViewCell {
     //MARK: - Properties
-    
     var user: User? {
-        
         didSet { configure() }
-        
     }
     
     private lazy var profileImageView: UIImageView = {
@@ -23,7 +20,6 @@ class UserCell: UITableViewCell {
         iv.setDimensions(width: 40, height: 40)
         iv.layer.cornerRadius = 40 / 2
         iv.backgroundColor = .twitterBlue
-        
         return iv
     }()
     
@@ -53,9 +49,7 @@ class UserCell: UITableViewCell {
         
         addSubview(stack)
         stack.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 12)
-        
-        
-        
+
     }
     
     required init?(coder: NSCoder) {
@@ -73,7 +67,5 @@ class UserCell: UITableViewCell {
         profileImageView.sd_setImage(with: user.profileImageURL)
         
     }
-    
-    
     
 }
