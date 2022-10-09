@@ -9,9 +9,9 @@ import Foundation
 
 struct ActionSheetViewModel {
     
-    private let user: User
-    var options: [ActionSheetOptions] {
-        var result = [ActionSheetOptions]()
+    private let user : User
+    var options      : [ActionSheetOptions] {
+    var result       = [ActionSheetOptions]()
         
         if user.isCurrentUser {
             result.append(.delete)

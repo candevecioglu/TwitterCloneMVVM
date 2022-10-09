@@ -79,7 +79,7 @@ class ExploreController: UITableViewController {
     
 }
 
-//MARK: - UITableView Delegata / Datasource
+// MARK: - UITableView Delegata / Datasource
 
 extension ExploreController {
     
@@ -102,7 +102,7 @@ extension ExploreController {
     
 }
 
-//MARK: - Search!
+// MARK: - Search!
 
 extension ExploreController: UISearchResultsUpdating {
     

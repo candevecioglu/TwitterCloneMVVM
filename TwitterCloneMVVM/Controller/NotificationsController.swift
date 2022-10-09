@@ -86,7 +86,7 @@ class NotificationsController: UITableViewController {
 }
 
 
-//MARK: - UITableView Datasource
+// MARK: - UITableView Datasource
 
 extension NotificationsController {
     
@@ -103,7 +103,7 @@ extension NotificationsController {
     
 }
 
-//MARK: - UITableView Delegate
+// MARK: - UITableView Delegate
 
 extension NotificationsController {
     
@@ -120,7 +120,7 @@ extension NotificationsController {
     }
 }
 
-//MARK: - NotificationCellDelegate
+// MARK: - NotificationCellDelegate
 
 extension NotificationsController: NotificationCellDelegate {
     

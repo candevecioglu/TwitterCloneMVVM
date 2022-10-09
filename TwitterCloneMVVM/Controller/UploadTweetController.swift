@@ -12,10 +12,9 @@ class UploadTweetController: UIViewController {
     
     // MARK: - Properties
     
-    private let user: User
-    private let config: UploadTweetConfiguration
+    private let user           : User
+    private let config         : UploadTweetConfiguration
     private lazy var viewModel = UploadTweetViewModel(config: config)
-    
     
     // Burayı lazy yazmamızın sebebi, içerisinde selector kullanmamız. Önce selector yükleniyor, sonra buttonu yükletiyoruz gibi anladım. Aksi durumda çalışmıyor.
     private lazy var actionButton: UIButton = {
