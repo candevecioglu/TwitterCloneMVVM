@@ -157,6 +157,13 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
 // MARK: - TweetCell Delegate
 
 extension FeedController: TweetCellDelegate {
+    func handleFetchUser(withUsername username: String) {
+        UserService.shared.fetchUser(withUsername: username) { user in
+            let controller = ProfileController(user: user)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     
     func handleLikeTapped(_ cell: TweetCell) {
       
@@ -168,7 +175,7 @@ extension FeedController: TweetCellDelegate {
             
             // Only upload notification if tweet is being liked, not unlike
             guard !tweet.didLike else { return }
-            NotificationService.shared.uploadNotification(type: .like, tweet: tweet)
+            NotificationService.shared.uploadNotification(toUser: tweet.user, type: .like, tweetID: tweet.tweetID)
             
         }
         

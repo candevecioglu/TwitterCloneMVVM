@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import ActiveLabel
 
 protocol TweetHeaderDelegate: AnyObject {
     
     func showActionSheet()
+    func handleFetchUser(withUsername username: String)
     
 }
 
@@ -60,11 +62,12 @@ class TweetHeader: UICollectionReusableView {
         
     }()
     
-    private let captionLabel: UILabel = {
-       let label = UILabel()
+    private let captionLabel: ActiveLabel = {
+       let label = ActiveLabel()
         label.font = UIFont.systemFont(ofSize: 20)
         label.numberOfLines = 0
-        label.text = "Kırmızı balık gölde kıvrıla kıvrıla yüzüyor, balıkçı Hasan bey geliyor birde ne görsün?"
+        label.mentionColor = .twitterBlue
+        label.hashtagColor = .twitterBlue
         return label
     }()
     
@@ -136,10 +139,11 @@ class TweetHeader: UICollectionReusableView {
         return button
     }()
     
-    private let replyLabel: UILabel = {
-       let label = UILabel()
+    private let replyLabel: ActiveLabel = {
+       let label = ActiveLabel()
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 12)
+        label.mentionColor = .twitterBlue
         return label
     }()
     
@@ -182,6 +186,8 @@ class TweetHeader: UICollectionReusableView {
         addSubview(actionStack)
         actionStack.centerX(inView: self)
         actionStack.anchor(top: statsView.bottomAnchor, paddingTop: 16)
+        
+        configureMentionHandler ()
         
     }
     
@@ -253,6 +259,12 @@ class TweetHeader: UICollectionReusableView {
         button.setDimensions(width: 20, height: 20)
         return button
         
+    }
+    
+    func configureMentionHandler () {
+        captionLabel.handleMentionTap { username in
+            self.delegate?.handleFetchUser(withUsername: username)
+        }
     }
     
 }

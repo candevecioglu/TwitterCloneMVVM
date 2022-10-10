@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import ActiveLabel
 
 protocol TweetCellDelegate: AnyObject {
     
     func handleProfileImageTapped(_ cell: TweetCell)
     func handleReplyTapped(_ cell: TweetCell)
     func handleLikeTapped(_ cell: TweetCell)
+    func handleFetchUser(withUsername username: String)
 }
 
 class TweetCell: UICollectionViewCell {
@@ -41,10 +43,20 @@ class TweetCell: UICollectionViewCell {
         return iv
     }()
     
-    private let captionLabel: UILabel = {
-       let label = UILabel()
+    private let replyLabel: ActiveLabel = {
+       let label = ActiveLabel()
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.mentionColor = .twitterBlue
+        return label
+    }()
+    
+    private let captionLabel: ActiveLabel = {
+       let label = ActiveLabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
+        label.mentionColor = .twitterBlue
+        label.hashtagColor = .twitterBlue
         return label
     }()
     
@@ -84,13 +96,6 @@ class TweetCell: UICollectionViewCell {
         button.setDimensions(width: 20, height: 20)
         button.addTarget(self, action: #selector(handleShareTapped), for: .touchUpInside)
         return button
-    }()
-    
-    private let replyLabel: UILabel = {
-       let label = UILabel()
-        label.textColor = .lightGray
-        label.font = UIFont.systemFont(ofSize: 12)
-        return label
     }()
     
     
@@ -133,6 +138,8 @@ class TweetCell: UICollectionViewCell {
         underlineView.backgroundColor = .systemGroupedBackground
         addSubview(underlineView)
         underlineView.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 1)
+        
+        configureMentionHandler ()
         
     }
     
@@ -188,6 +195,12 @@ class TweetCell: UICollectionViewCell {
         replyLabel.isHidden = viewModel.shouldHideReplyLabel
         replyLabel.text = viewModel.replyText
         
+    }
+    
+    func configureMentionHandler () {
+        captionLabel.handleMentionTap { username in
+            self.delegate?.handleFetchUser(withUsername: username)
+        }
     }
     
 }
