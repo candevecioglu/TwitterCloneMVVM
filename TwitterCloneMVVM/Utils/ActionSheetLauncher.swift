@@ -110,14 +110,14 @@ class ActionSheetLauncher: NSObject {
     }
     
     func configureUITableView() {
-        tableView.backgroundColor = .white
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.backgroundColor    = .white
+        tableView.delegate           = self
+        tableView.dataSource         = self
         
-        tableView.rowHeight = 60
-        tableView.separatorColor = .none
+        tableView.rowHeight          = 60
+        tableView.separatorColor     = .none
         tableView.layer.cornerRadius = 5
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled    = false
         
         tableView.register(ActionSheetCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
