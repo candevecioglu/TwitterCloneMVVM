@@ -74,10 +74,10 @@ class NotificationsController: UITableViewController {
         
         tableView.register(NotificationCell.self, forCellReuseIdentifier: reuseIdentifier)
 
-        tableView.rowHeight = 60
+        tableView.rowHeight      = 60
         tableView.separatorStyle = .none
         
-        let refreshControl = UIRefreshControl()
+        let refreshControl       = UIRefreshControl()
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         
