@@ -28,7 +28,7 @@ class TweetHeader: UICollectionReusableView {
     weak var delegate: TweetHeaderDelegate?
     
     private lazy var profileImageView: UIImageView = {
-       let iv = UIImageView()
+        let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         iv.setDimensions(width: 48, height: 48)
