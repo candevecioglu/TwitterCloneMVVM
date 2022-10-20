@@ -54,20 +54,20 @@ class TweetHeader: UICollectionReusableView {
     
     private let userNameLabel: UILabel = {
         
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        let label       = UILabel()
+        label.font      = UIFont.boldSystemFont(ofSize: 14)
         label.textColor = .lightGray
-        label.text = "@muscandev"
+        label.text      = "@muscandev"
         return label
         
     }()
     
     private let captionLabel: ActiveLabel = {
        let label = ActiveLabel()
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font          = UIFont.systemFont(ofSize: 20)
         label.numberOfLines = 0
-        label.mentionColor = .twitterBlue
-        label.hashtagColor = .twitterBlue
+        label.mentionColor  = .twitterBlue
+        label.hashtagColor  = .twitterBlue
         return label
     }()
     
