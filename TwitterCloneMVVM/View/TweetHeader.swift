@@ -28,12 +28,12 @@ class TweetHeader: UICollectionReusableView {
     weak var delegate: TweetHeaderDelegate?
     
     private lazy var profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.clipsToBounds = true
+        let iv                = UIImageView()
+        iv.contentMode        = .scaleAspectFit
+        iv.clipsToBounds      = true
         iv.setDimensions(width: 48, height: 48)
         iv.layer.cornerRadius = 48 / 2
-        iv.backgroundColor = .twitterBlue
+        iv.backgroundColor    = .twitterBlue
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
         
@@ -45,7 +45,7 @@ class TweetHeader: UICollectionReusableView {
     
     private let fullNameLabel: UILabel = {
         
-        let label = UILabel()
+        let label  = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "Can Devecioğlu"
         return label
@@ -72,11 +72,10 @@ class TweetHeader: UICollectionReusableView {
     }()
     
     private let dateLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .lightGray
-        label.font = UIFont.systemFont(ofSize: 14)
+        let label           = UILabel()
+        label.textColor     = .lightGray
+        label.font          = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .left
-        label.text = "05:30 - 01/28/2022"
         return label
     }()
     
