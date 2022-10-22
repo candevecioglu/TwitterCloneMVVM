@@ -52,18 +52,18 @@ class TweetCell: UICollectionViewCell {
     }()
     
     private let captionLabel: ActiveLabel = {
-       let label = ActiveLabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+       let label            = ActiveLabel()
+        label.font          = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
-        label.mentionColor = .twitterBlue
-        label.hashtagColor = .twitterBlue
+        label.mentionColor  = .twitterBlue
+        label.hashtagColor  = .twitterBlue
         return label
     }()
     
     private let infoLabel = UILabel()
     
     private lazy var commentButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button       = UIButton(type: .system)
         button.setImage(UIImage(named: "comment"), for: .normal)
         button.tintColor = .darkGray
         button.setDimensions(width: 20, height: 20)
@@ -72,7 +72,7 @@ class TweetCell: UICollectionViewCell {
     }()
     
     private lazy var retweetButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button       = UIButton(type: .system)
         button.setImage(UIImage(named: "retweet"), for: .normal)
         button.tintColor = .darkGray
         button.setDimensions(width: 20, height: 20)
@@ -186,14 +186,14 @@ class TweetCell: UICollectionViewCell {
         
         let viewModel = TweetViewModel(tweet: tweet)
         
-        captionLabel.text = tweet.caption
+        captionLabel.text        = tweet.caption
         profileImageView.sd_setImage(with: viewModel.profileImageURL)
         infoLabel.attributedText = viewModel.userInfoText
         
-        likeButton.tintColor = viewModel.likeButtonTintColor
+        likeButton.tintColor    = viewModel.likeButtonTintColor
         likeButton.setImage(viewModel.likeButtonImage, for: .normal)
-        replyLabel.isHidden = viewModel.shouldHideReplyLabel
-        replyLabel.text = viewModel.replyText
+        replyLabel.isHidden     = viewModel.shouldHideReplyLabel
+        replyLabel.text         = viewModel.replyText
         
     }
     
