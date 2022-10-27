@@ -27,11 +27,11 @@ class NotificationCell: UITableViewCell {
     
     private lazy var profileImageView: UIImageView = {
        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.clipsToBounds = true
-        iv.setDimensions(width: 40, height: 40)
-        iv.layer.cornerRadius = 40 / 2
-        iv.backgroundColor = .twitterBlue
+        iv.contentMode         = .scaleAspectFit
+        iv.clipsToBounds       = true
+        iv.setDimensions(width : 40, height: 40)
+        iv.layer.cornerRadius  = 40 / 2
+        iv.backgroundColor     = .twitterBlue
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
         
